@@ -1,3 +1,7 @@
+* {
+  outline: none;
+}
+
 html {
   @include desktop {
     font-size: 15px;
@@ -9,6 +13,7 @@ html {
 body,
 html {
   height: 100%;
+  user-select: none;
 }
 
 body {
@@ -24,6 +29,8 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
+  max-width: 1480px;
+  margin: 0 auto;
 }
 
 .container {
@@ -86,4 +93,84 @@ img {
   display: block;
   max-width: 100%;
   max-height: 100%;
+}
+
+.title {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+.text {
+  color: $text-color;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 600;
+  opacity: .7;
+}
+
+.link {
+  color: $links-color;
+  font-size: 18px;
+  text-decoration: none;
+  transition: $transition;
+  font-weight: 700;
+
+  .link-icon {
+    transition: $transition;
+    fill: $links-color;
+    width: 15px;
+    height: 15px;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    color:$link-hover;
+
+    .link-icon{
+      fill: $link-hover;
+    }
+  }
+}
+
+.user-pic {
+  max-width: 300px;
+}
+
+.link-class {
+  width: 100px;
+  height: 100px;
+}
+
+.btn {
+  background: linear-gradient(45deg, #ad00ed, #5500f2);
+  color: white;
+  width: 350px;
+  height: 80px;
+  border-radius: 40px 5px 40px 5px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: $transition;
+
+  &:hover {
+    border-radius: 5px 40px 5px 40px;
+  }
+}
+
+.section__budda-bg {
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+  padding-top: 250px;
+
+  &:before {
+    content: '';
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+    background: #fff;
+    height: 90px;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+  }
 }

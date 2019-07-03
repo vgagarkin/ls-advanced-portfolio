@@ -1,0 +1,66 @@
+- var arSkills = [
+-   [
+-       {
+-           techName: 'HTML5',
+-           skillValue: 87
+-       },
+-       {
+-           techName: 'CSS3',
+-           skillValue: 100
+-       },
+-       {
+-           techName: 'Javascript',
+-           skillValue: 68
+-       },
+-       {
+-           techName: 'Jquery и Vue.js',
+-           skillValue: 30
+-       },
+-   ],
+-   [
+-       {
+-           techName: 'GIT',
+-           skillValue: 90
+-       },
+-       {
+-           techName: 'Terminal',
+-           skillValue: 85
+-       },
+-       {
+-           techName: 'Gulp',
+-           skillValue: 15
+-       },
+-       {
+-           techName: 'Webpack',
+-           skillValue: 13
+-       },
+-   ]
+- ]
+
+- var skillGroupName = [
+-   'Front-end',
+-   'Workflow'
+- ]
+
+
+section.skills
+    .wrapper
+        .skills__hero
+            h2.skills__title.title Чем я могу быть полезен вам
+            p.skills__decription.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+                                    | Чуть позже я освежу в нём свой контент. А пока посмотрите,
+                                    | как тут всё классно и красиво!
+        .skills__wrapper
+            each skillsRow, index in arSkills
+                .skills__list
+                    .skills__list-name #{skillGroupName[index]}
+                    each skillsItem in skillsRow
+                        .skills__item
+                            svg.skills__item-progressbar(viewbox="0 0 100 100" preserveaspectratio="none")
+                                defs
+                                    lineargradient#gradient(x1="100%" y1="-20%" x2="0%" y2="0%")
+                                        stop(offset="0%" style="stop-color: #ad00ed")
+                                        stop(offset="100%" style="stop-color: #5500f2")
+                                circle.skills__item-circle.circle(cx="50" cy="50" r="45" stroke-width="5")
+                                circle.skills__item-progress.circle(cx="50" cy="50" r="45" style=`animation-delay: -${skillsItem.skillValue}s` stroke-width="10" stroke="url(#gradient)")
+                            span.circle__item-text #{skillsItem.techName}

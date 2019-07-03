@@ -1,0 +1,11 @@
+include socials
+
+header.header
+  .wrapper
+    include logo
+    +nav('main-menu', 'header', ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'])
+    +socials('socials', 'header', [
+          {name: 'insta', link: 'https://instagram.com/vgagarkin'},
+          {name: 'vk', link: 'https://vk.com/vladimir.gagarkin'},
+          {name: 'github', link: 'https://github.com/vgagarkin'},
+    ])

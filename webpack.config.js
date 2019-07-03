@@ -78,7 +78,7 @@ module.exports = (env, argv) => {
         use: ["pug-plain-loader"]
       },
       {
-        use: ["pug-loader"]
+        use: ["pug-loader?pretty=true"]
       }
     ]
   };

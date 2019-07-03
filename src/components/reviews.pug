@@ -1,0 +1,34 @@
+- var items = [
+-   {
+-       name: 'Ковальчук Дмитрий',
+-       position: 'Основатель Loftschool',
+-       avatar: require('images/content/kovald.jpg'),
+-       comment: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 ' +
+-               'месяца только самых тяжелых испытаний и бессонных ночей!'
+-   },
+-   {
+-       name: 'Владимир Сабанцев',
+-       position: 'Преподаватель',
+-       avatar: require('images/content/sabanv.jpg'),
+-       comment: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах'
+-   }
+- ]
+
+section.reviews
+    .wrapper
+        h2.reviews__title.title Что обо мне говорят
+        .reviews__controls
+            button.reviews__control-next(data-value='-1' type='button')
+                +icon('arrow-down', 'reviews__control-icon')
+            button.reviews__control-prev(data-value='1' type='button')
+                +icon('arrow-down', 'reviews__control-icon')
+        ul.reviews__comment-list
+            each item in items
+                li.reviews__comment-item
+                    +icon('quote', 'reviews__comment-icon')
+                    .reviews__comment-text.text #{item.comment}
+                    .reviews__comment-sender
+                        .reviews__comment-avatar(style=`background-image: url('${item.avatar}')`)
+                        .reviews__comment-sender-info
+                            .reviews__comment-sender-name.text #{item.name}
+                            .reviews__comment-sender-position.text #{item.position}

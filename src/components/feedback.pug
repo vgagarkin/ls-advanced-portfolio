@@ -1,0 +1,19 @@
+section.feedback
+    .wrapper
+        h2.feedback__title.title Связаться со мной
+        form.feedback__form
+            label.feedback__block.feedback__block--name
+                .feedback__label-text.text Введите ваше имя
+                +icon('user', 'feedback__label-icon')
+                input.feedback__field(type='text' name='name' placeholder='Владимир Гагаркин')
+            label.feedback__block.feedback__block--email
+                .feedback__label-text.text Введите ваш email
+                +icon('envelope', 'feedback__label-icon')
+                input.feedback__field(type='text' name='email' placeholder='gagarkin@pxlbox.io')
+            label.feedback__block.feedback__block--text
+                .feedback__label-text.text Сообщение к письму
+                +icon('message', 'feedback__label-icon')
+                textarea.feedback__field(name='text'
+                    placeholder='Требуется ваша помощь в создании сайта. ' +
+                    'Интересуют сроки и цена вопроса')
+            button.btn.btn--submit(type='sumbit') Отправить

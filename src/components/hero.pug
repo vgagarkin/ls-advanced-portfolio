@@ -1,0 +1,35 @@
+- var userData = [
+-   {
+-       rowName: 'Проживаю:',
+-       rowValue: 'Москва'
+-   },
+-   {
+-       rowName: 'Возраст:',
+-       rowValue: '25 лет'
+-   },
+-   {
+-       rowName: 'Родился:',
+-       rowValue: '3 марта 1994'
+-   }
+- ]
+
+section.hero
+    .wrapper
+        .hero__face
+            .hero__photo
+                +image('content/user.jpg', 'hero__ava')
+            .hero__data
+                each row in userData
+                    .hero__data-item
+                        .hero__data-title.text #{row.rowName}
+                        .hero__data-value #{row.rowValue}
+        h2.hero__content
+            .hero__content-hello.text Привет, меня зовут
+            .hero__content-name.title Владимир Гагаркин
+            .hero__text.text
+                p Я занимаюсь разработкой современных сайтов и приложений.
+                  | Мне нравится делать интересные и современные проекты.
+            p.hero__post-scriptum.text
+                span.star *
+                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+                | Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!

@@ -4,5 +4,13 @@
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "480px",
+  "link-hover": "#5500f2",
+  "footer-grey": "#63656c",
+  "transition": "all .5s",
+  "active-slide": "#f29400",
+  "dark-blue": "#2d3c4e",
+  "lighten-grey": "#f1f5f9",
+  "circle-color": "#eaeaea",
+  "progress-color": "#5500f2"
 }

@@ -1,0 +1,6 @@
+mixin socials(className, mod, socials)
+    ul(class=`${className} ${className}--${mod}`)
+        each socialItem in socials
+            li(class=className + '__item')
+                a(class=className+ '__link' href=socialItem.link target='_blank')
+                    +icon(`${socialItem.name}`, `${className}__icon`)

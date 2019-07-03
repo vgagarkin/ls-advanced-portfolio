@@ -1,0 +1,8 @@
+.welcome-section(style=`background-image: url(${require('images/content/welcome-section.jpg')})`)
+    .welcome-section__parallax
+        .wrapper
+            h3.welcome-section__desc Личный сайт <br/> веб-разработчика
+            h1.welcome-section__title Владимир Гагаркин
+            a.welcome-section__scroll Скролл
+                +icon('scroll', 'welcome-section__scroll-icon')
+    include ../components/hero

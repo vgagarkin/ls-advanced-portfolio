@@ -1,19 +1,406 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio | main page</title>
-  <link href="/main.6bc5067b0825ff504686.css" rel="stylesheet"></head>
+    <title>Vladimir Gagarkin | Web-developer</title>
+  <link href="/main.f718a40e7eff735ceeea.css" rel="stylesheet"></head>
   <body>
-    <div class="wrapper">
-      <div class="maincontent"><img class="user-pic" src="/user.jpg">
-        <svg class="link-class" viewBox="0 0 512.092 512.092" preserveAspectRatio="none">
-          <use xlink:href="/sprite.svg#link"></use>
-        </svg>
-        <div class="icon-bg"></div>
+    <header class="header">
+      <div class="wrapper">
+<div class="logo">ВГ</div>
+        <nav class="main-menu main-menu--header">
+          <ul class="main-menu__list">
+            <li class="main-menu__item"><a class="main-menu__link" href="#">Главная</a></li>
+            <li class="main-menu__item"><a class="main-menu__link" href="#">Обо мне</a></li>
+            <li class="main-menu__item"><a class="main-menu__link" href="#">Навыки</a></li>
+            <li class="main-menu__item"><a class="main-menu__link" href="#">Работы</a></li>
+            <li class="main-menu__item"><a class="main-menu__link" href="#">Отзывы</a></li>
+            <li class="main-menu__item"><a class="main-menu__link" href="#">Связаться</a></li>
+          </ul>
+        </nav>
+            <ul class="socials socials--header">
+              <li class="socials__item"><a class="socials__link" href="https://instagram.com/vgagarkin" target="_blank">
+                  <svg class="socials__icon" viewBox="0 0 97.395 97.395" preserveAspectRatio="none">
+                    <use xlink:href="/sprite.svg#insta"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://vk.com/vladimir.gagarkin" target="_blank">
+                  <svg class="socials__icon" viewBox="0 0 548.358 548.358" preserveAspectRatio="none">
+                    <use xlink:href="/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://github.com/vgagarkin" target="_blank">
+                  <svg class="socials__icon" viewBox="0 0 475.084 475.084" preserveAspectRatio="none">
+                    <use xlink:href="/sprite.svg#github"></use>
+                  </svg></a></li>
+            </ul>
+      </div>
+    </header>
+    <div class="welcome-section" style="background-image: url(/962958dbc98198cb333415b2f32c18aa.jpg)">
+      <div class="welcome-section__parallax">
+        <div class="wrapper">
+          <h3 class="welcome-section__desc">Личный сайт <br/> веб-разработчика</h3>
+          <h1 class="welcome-section__title">Владимир Гагаркин</h1><a class="welcome-section__scroll">Скролл
+            <svg class="welcome-section__scroll-icon" viewBox="-90 0 512 512" preserveAspectRatio="none">
+              <use xlink:href="/sprite.svg#scroll"></use>
+            </svg></a>
+        </div>
+      </div>
+      <section class="hero">
+        <div class="wrapper">
+          <div class="hero__face">
+            <div class="hero__photo"><img class="hero__ava" src="/69db177bf10a3c530b2602820fa24b52.jpg">
+            </div>
+            <div class="hero__data">
+              <div class="hero__data-item">
+                <div class="hero__data-title text">Проживаю:</div>
+                <div class="hero__data-value">Москва</div>
+              </div>
+              <div class="hero__data-item">
+                <div class="hero__data-title text">Возраст:</div>
+                <div class="hero__data-value">25 лет</div>
+              </div>
+              <div class="hero__data-item">
+                <div class="hero__data-title text">Родился:</div>
+                <div class="hero__data-value">3 марта 1994</div>
+              </div>
+            </div>
+          </div>
+          <h2 class="hero__content">
+            <div class="hero__content-hello text">Привет, меня зовут</div>
+            <div class="hero__content-name title">Владимир Гагаркин</div>
+            <div class="hero__text text">
+              <p>
+                Я занимаюсь разработкой современных сайтов и приложений.Мне нравится делать интересные и современные проекты.</p>
+            </div>
+            <p class="hero__post-scriptum text"><span class="star">*</span>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+              Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            </p>
+          </h2>
+        </div>
+      </section>
+    </div>
+    <!--include components/hero-->
+<section class="skills">
+  <div class="wrapper">
+    <div class="skills__hero">
+      <h2 class="skills__title title">Чем я могу быть полезен вам</h2>
+      <p class="skills__decription text">
+        Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.Чуть позже я освежу в нём свой контент. А пока посмотрите,
+        как тут всё классно и красиво!
+      </p>
+    </div>
+    <div class="skills__wrapper">
+      <div class="skills__list">
+        <div class="skills__list-name">Front-end</div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -87s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">HTML5</span>
+        </div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -100s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">CSS3</span>
+        </div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -68s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">Javascript</span>
+        </div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -30s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">Jquery и Vue.js</span>
+        </div>
+      </div>
+      <div class="skills__list">
+        <div class="skills__list-name">Workflow</div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -90s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">GIT</span>
+        </div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -85s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">Terminal</span>
+        </div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -15s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">Gulp</span>
+        </div>
+        <div class="skills__item">
+          <svg class="skills__item-progressbar" viewbox="0 0 100 100" preserveaspectratio="none">
+            <defs>
+              <lineargradient id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color: #ad00ed"></stop>
+                <stop offset="100%" style="stop-color: #5500f2"></stop>
+              </lineargradient>
+            </defs>
+            <circle class="skills__item-circle circle" cx="50" cy="50" r="45" stroke-width="5"></circle>
+            <circle class="skills__item-progress circle" cx="50" cy="50" r="45" style="animation-delay: -13s" stroke-width="10" stroke="url(#gradient)"></circle>
+          </svg><span class="circle__item-text">Webpack</span>
+        </div>
       </div>
     </div>
-  <script type="text/javascript" src="/main.e497f1f15045d93c85c4.build.js"></script></body>
+  </div>
+</section>
+    <section class="projects">
+      <div class="wrapper">
+        <h2 class="projects__title title">Мои работы</h2>
+        <div class="projects__list">
+          <ul class="projects__slides"><img class="projects__slide show" src="http://vgagarkin.ru/img/project.jpg" alt="Проект #1"><img class="projects__slide" src="http://vgagarkin.ru/img/project.jpg" alt="Проект #2"><img class="projects__slide" src="http://vgagarkin.ru/img/project.jpg" alt="Проект #3"><img class="projects__slide" src="http://vgagarkin.ru/img/project.jpg" alt="Проект #4">
+            <ul class="projects__thumbnails">
+              <button class="projects__thumbnail-item active" style="background-image: url('http://vgagarkin.ru/img/project_small_0.jpg')" type="button" data-value="0">
+                <!--img(src= project.images.small)-->
+              </button>
+              <button class="projects__thumbnail-item" style="background-image: url('http://vgagarkin.ru/img/project_small_1.jpg')" type="button" data-value="1">
+                <!--img(src= project.images.small)-->
+              </button>
+              <button class="projects__thumbnail-item" style="background-image: url('http://vgagarkin.ru/img/project_small_2.jpg')" type="button" data-value="2">
+                <!--img(src= project.images.small)-->
+              </button>
+              <button class="projects__thumbnail-item" style="background-image: url('http://vgagarkin.ru/img/project_small_3.jpg')" type="button" data-value="3">
+                <!--img(src= project.images.small)-->
+              </button>
+            </ul>
+            <div class="projects__controls">
+              <button class="projects__control-next" data-value="-1" type="button">
+                <svg class="projects__control-icon" viewBox="0 0 306 306" preserveAspectRatio="none">
+                  <use xlink:href="/sprite.svg#arrow-down"></use>
+                </svg>
+              </button>
+              <button class="projects__control-prev" data-value="1" type="button">
+                <svg class="projects__control-icon" viewBox="0 0 306 306" preserveAspectRatio="none">
+                  <use xlink:href="/sprite.svg#arrow-down"></use>
+                </svg>
+              </button>
+            </div>
+          </ul>
+          <div class="projects__content">
+            <div class="projects__content-wrapper show">
+              <ul class="projects__tags">
+                <li class="projects__tag">HTML</li>
+                <li class="projects__tag">CSS</li>
+                <li class="projects__tag">JavaScript</li>
+              </ul>
+              <h5 class="projects__about-title title">Проект #1</h5>
+              <p class="projects__about-description text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p><a class="projects__link link" href="https://github.com/vgagarkin" target="_blank" title="Смотреть Проект #1">
+                <svg class="link-icon" viewBox="0 0 512.092 512.092" preserveAspectRatio="none">
+                  <use xlink:href="/sprite.svg#link"></use>
+                </svg>Подробнее</a>
+            </div>
+            <div class="projects__content-wrapper">
+              <ul class="projects__tags">
+                <li class="projects__tag">HTML</li>
+                <li class="projects__tag">CSS</li>
+                <li class="projects__tag">JavaScript</li>
+              </ul>
+              <h5 class="projects__about-title title">Проект #2</h5>
+              <p class="projects__about-description text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at culpa deserunt est laudantium modi nihil non qui, sed voluptatum.</p><a class="projects__link link" href="https://github.com/vgagarkin" target="_blank" title="Смотреть Проект #2">
+                <svg class="link-icon" viewBox="0 0 512.092 512.092" preserveAspectRatio="none">
+                  <use xlink:href="/sprite.svg#link"></use>
+                </svg>Посмотреть</a>
+            </div>
+            <div class="projects__content-wrapper">
+              <ul class="projects__tags">
+                <li class="projects__tag">HTML</li>
+                <li class="projects__tag">CSS</li>
+                <li class="projects__tag">JavaScript</li>
+              </ul>
+              <h5 class="projects__about-title title">Проект #3</h5>
+              <p class="projects__about-description text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at culpa deserunt est laudantium modi nihil non qui, sed voluptatum.</p><a class="projects__link link" href="https://github.com/vgagarkin" target="_blank" title="Смотреть Проект #3">
+                <svg class="link-icon" viewBox="0 0 512.092 512.092" preserveAspectRatio="none">
+                  <use xlink:href="/sprite.svg#link"></use>
+                </svg>Открыть</a>
+            </div>
+            <div class="projects__content-wrapper">
+              <ul class="projects__tags">
+                <li class="projects__tag">HTML</li>
+                <li class="projects__tag">CSS</li>
+                <li class="projects__tag">JavaScript</li>
+              </ul>
+              <h5 class="projects__about-title title">Проект #4</h5>
+              <p class="projects__about-description text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at culpa deserunt est laudantium modi nihil non qui, sed voluptatum.</p><a class="projects__link link" href="https://github.com/vgagarkin" target="_blank" title="Смотреть Проект #4">
+                <svg class="link-icon" viewBox="0 0 512.092 512.092" preserveAspectRatio="none">
+                  <use xlink:href="/sprite.svg#link"></use>
+                </svg>Ссылка</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section__budda-bg" style="background-image: url(/b8e80de5d3bc7c6ab467cb2e8b4b57d9.jpg)">
+      <section class="reviews">
+        <div class="wrapper">
+          <h2 class="reviews__title title">Что обо мне говорят</h2>
+          <div class="reviews__controls">
+            <button class="reviews__control-next" data-value="-1" type="button">
+              <svg class="reviews__control-icon" viewBox="0 0 306 306" preserveAspectRatio="none">
+                <use xlink:href="/sprite.svg#arrow-down"></use>
+              </svg>
+            </button>
+            <button class="reviews__control-prev" data-value="1" type="button">
+              <svg class="reviews__control-icon" viewBox="0 0 306 306" preserveAspectRatio="none">
+                <use xlink:href="/sprite.svg#arrow-down"></use>
+              </svg>
+            </button>
+          </div>
+          <ul class="reviews__comment-list">
+            <li class="reviews__comment-item">
+              <svg class="reviews__comment-icon" viewBox="0 0 95.333 95.332" preserveAspectRatio="none">
+                <use xlink:href="/sprite.svg#quote"></use>
+              </svg>
+              <div class="reviews__comment-text text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!</div>
+              <div class="reviews__comment-sender">
+                <div class="reviews__comment-avatar" style="background-image: url('/9ac3363d2eb66b5b0ceb952e64197e64.jpg')"></div>
+                <div class="reviews__comment-sender-info">
+                  <div class="reviews__comment-sender-name text">Ковальчук Дмитрий</div>
+                  <div class="reviews__comment-sender-position text">Основатель Loftschool</div>
+                </div>
+              </div>
+            </li>
+            <li class="reviews__comment-item">
+              <svg class="reviews__comment-icon" viewBox="0 0 95.333 95.332" preserveAspectRatio="none">
+                <use xlink:href="/sprite.svg#quote"></use>
+              </svg>
+              <div class="reviews__comment-text text">Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах</div>
+              <div class="reviews__comment-sender">
+                <div class="reviews__comment-avatar" style="background-image: url('/9146673c2fddab7eade92f3ac04c5427.jpg')"></div>
+                <div class="reviews__comment-sender-info">
+                  <div class="reviews__comment-sender-name text">Владимир Сабанцев</div>
+                  <div class="reviews__comment-sender-position text">Преподаватель</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="feedback">
+        <div class="wrapper">
+          <h2 class="feedback__title title">Связаться со мной</h2>
+          <form class="feedback__form">
+            <label class="feedback__block feedback__block--name">
+              <div class="feedback__label-text text">Введите ваше имя</div>
+              <svg class="feedback__label-icon" viewBox="0 0 482.9 482.9" preserveAspectRatio="none">
+                <use xlink:href="/sprite.svg#user"></use>
+              </svg>
+              <input class="feedback__field" type="text" name="name" placeholder="Владимир Гагаркин">
+            </label>
+            <label class="feedback__block feedback__block--email">
+              <div class="feedback__label-text text">Введите ваш email</div>
+              <svg class="feedback__label-icon" viewBox="0 0 483.3 483.3" preserveAspectRatio="none">
+                <use xlink:href="/sprite.svg#envelope"></use>
+              </svg>
+              <input class="feedback__field" type="text" name="email" placeholder="gagarkin@pxlbox.io">
+            </label>
+            <label class="feedback__block feedback__block--text">
+              <div class="feedback__label-text text">Сообщение к письму</div>
+              <svg class="feedback__label-icon" viewBox="0 0 612 612" preserveAspectRatio="none">
+                <use xlink:href="/sprite.svg#message"></use>
+              </svg>
+              <textarea class="feedback__field" name="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"></textarea>
+            </label>
+            <button class="btn btn--submit" type="sumbit">Отправить</button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="copyright">
+          <div class="copyright__year">&copy; 2019</div>
+          <div class="coyright__description">
+            <div class="copyright__name">Владимир Гагаркин</div>
+            <div class="copyright__text text">Личный сайт <br> веб-разработчика</div>
+          </div>
+        </div>
+        <div class="footer__content">
+          <nav class="main-menu main-menu--footer">
+            <ul class="main-menu__list">
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Главная</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Обо мне</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Навыки</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Работы</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Отзывы</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Связаться</a></li>
+            </ul>
+          </nav>
+          <div class="footer__description">
+            <div class="footer__description-text text">Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool</div>
+                <ul class="socials socials--footer">
+                  <li class="socials__item"><a class="socials__link" href="https://instagram.com/vgagarkin" target="_blank">
+                      <svg class="socials__icon" viewBox="0 0 97.395 97.395" preserveAspectRatio="none">
+                        <use xlink:href="/sprite.svg#insta"></use>
+                      </svg></a></li>
+                  <li class="socials__item"><a class="socials__link" href="https://vk.com/vladimir.gagarkin" target="_blank">
+                      <svg class="socials__icon" viewBox="0 0 548.358 548.358" preserveAspectRatio="none">
+                        <use xlink:href="/sprite.svg#vk"></use>
+                      </svg></a></li>
+                  <li class="socials__item"><a class="socials__link" href="https://github.com/vgagarkin" target="_blank">
+                      <svg class="socials__icon" viewBox="0 0 475.084 475.084" preserveAspectRatio="none">
+                        <use xlink:href="/sprite.svg#github"></use>
+                      </svg></a></li>
+                </ul>
+          </div>
+          <div class="footer__blockquote">
+            <div class="footer__blockquote-text text">
+              Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат,который знает где вы живете</div>
+            <div class="footer__blockquote-author">Martin Golding</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script type="text/javascript" src="/main.ce0965634aa5d0355aea.build.js"></script></body>
 </html>

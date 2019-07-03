@@ -1,0 +1,22 @@
+include socials
+
+footer.footer
+    .wrapper
+        .copyright
+            .copyright__year &copy; 2019
+            .coyright__description
+                .copyright__name Владимир Гагаркин
+                .copyright__text.text Личный сайт <br> веб-разработчика
+        .footer__content
+            +nav('main-menu', 'footer',['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'])
+            .footer__description
+                .footer__description-text.text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                +socials('socials', 'footer', [
+                  {name: 'insta', link: 'https://instagram.com/vgagarkin'},
+                  {name: 'vk', link: 'https://vk.com/vladimir.gagarkin'},
+                  {name: 'github', link: 'https://github.com/vgagarkin'},
+                ])
+            .footer__blockquote
+                .footer__blockquote-text.text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат,
+                                  | который знает где вы живете
+                .footer__blockquote-author Martin Golding
