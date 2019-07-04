@@ -5,8 +5,11 @@
     z-index: 1;
 
     .wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: .75fr 690px 1fr;
+    }
+
+    .socials--header {
+        justify-self: end;
     }
 }

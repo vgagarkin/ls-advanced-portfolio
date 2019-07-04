@@ -31,6 +31,10 @@ body {
   position: relative;
   max-width: 1480px;
   margin: 0 auto;
+
+  @include laptop() {
+    max-width: calc(100vw - 120px);
+  }
 }
 
 .container {
