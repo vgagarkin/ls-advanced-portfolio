@@ -2,8 +2,95 @@
     -webkit-background-size: cover;
     background-size: cover;
     clip-path: polygon(0% 0%, 0% 90%, 50% 100%, 100% 90%, 100% 0%);
+    background-color: $smoky-grey;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        //@include bg-img('../images/content/welcome-section.jpg');
+        background-color: $smoky-grey;
+        opacity: 1;
+        position: absolute;
+        z-index: -1;
+    }
 
     &__parallax {
+        height: 100vh;
+        position: relative;
+
+        &-image {
+            position: absolute;
+        }
+
+        &-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            will-change: transform;
+
+            &.layer-1 {
+                .welcome-section__parallax-image {
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: left top;
+                }
+            }
+
+            &.layer-2 {
+                .welcome-section__parallax-image {
+                    top: 308px;
+                    right: 0;
+                    object-fit: cover;
+                    width: 100%;
+                    object-position: right top;
+                }
+            }
+
+            &.layer-3 {
+                .welcome-section__parallax-image {
+                    top: 480px;
+                    left: 50%;
+                    margin-left: 16%;
+                }
+            }
+
+            &.layer-4 {
+                .welcome-section__parallax-image {
+                    top: 530px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &.layer-5 {
+                .welcome-section__parallax-image {
+                    top: 700px;
+                    right: 0;
+                }
+            }
+
+            &.layer-6 {
+                .welcome-section__parallax-image {
+                    top: 664px;
+                }
+            }
+
+            &.layer-7 {
+                top: auto;
+                bottom: -170px;
+                .welcome-section__parallax-image {
+                    width: 100%;
+                    top: 100%;
+                }
+            }
+        }
+    }
+
+    &__greeting {
         height: 100vh;
     }
 
@@ -11,11 +98,26 @@
         display: grid;
         align-content: center;
         justify-content: center;
+
+        &--welcome {
+            grid-template-columns: 500px;
+
+            @include desktop {
+                grid-template-columns: auto min-content;
+                column-gap: 60px;
+            }
+        }
     }
 
     &__desc {
         font-size: 18px;
         text-align: center;
+        opacity: .4;
+
+        @include desktop {
+            grid-area: 1 / 1 / 2 / 2;
+            text-align: right;
+        }
     }
 
     &__title {
@@ -23,10 +125,12 @@
         font-size: 72px;
         line-height: 60px;
         font-weight: 900;
-        display: inline-block;
         text-align: center;
-        max-width: 500px;
 
+        @include desktop {
+            grid-area: 1 / 2 / 2 / 3;
+            text-align: left;
+        }
     }
 
     &__scroll {

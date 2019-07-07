@@ -1,8 +1,14 @@
-.welcome-section(style=`background-image: url(${require('images/content/welcome-section.jpg')})`)
+.welcome-section
     .welcome-section__parallax
-        .wrapper
-            h3.welcome-section__desc Личный сайт <br/> веб-разработчика
-            h1.welcome-section__title Владимир Гагаркин
-            a.welcome-section__scroll Скролл
-                +icon('scroll', 'welcome-section__scroll-icon')
+        .welcome-section__parallax-wrapper
+            - for (var p=1; p<=7; p++) {
+            .welcome-section__parallax-layer(class=`layer-${p}` data-speed=`${p === 2 ? 7.8 : p*2.4}`)
+                +image(`content/welcome-parallax-${p}.png`, 'welcome-section__parallax-image')
+            - }
+        .welcome-section__greeting
+            .wrapper.wrapper--welcome
+                h3.welcome-section__desc Личный сайт <br/> веб-разработчика
+                h1.welcome-section__title Владимир Гагаркин
+                a.welcome-section__scroll Скролл
+                    +icon('scroll', 'welcome-section__scroll-icon')
     include ../components/hero

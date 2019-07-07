@@ -27,3 +27,8 @@
     @content;
   }
 }
+
+@mixin bg-img($image, $repeat: no-repeat, $position: center, $size: cover){
+  background-image: url($image);
+  background-repeat: $repeat;
+}

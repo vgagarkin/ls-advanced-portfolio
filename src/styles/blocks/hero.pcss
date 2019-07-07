@@ -1,14 +1,18 @@
 .hero {
-    //padding-top: 50px;
     margin-top: 200px;
     padding-bottom: 260px;
     margin-bottom: 140px;
+    background-color: $smoky-grey;
 
     .wrapper {
         display: grid;
         max-width: 1010px;
         grid-template-columns: 34% 1fr;
         column-gap: 30px;
+
+        @include desktop {
+            max-width: calc(100vw - 120px);
+        }
     }
 
     &__face {
@@ -34,6 +38,10 @@
 
     &__content {
         grid-area: 1 / 2 / 2 / 3;
+
+        @include desktop {
+            padding-right: 70px;
+        }
     }
 
     &__content {
