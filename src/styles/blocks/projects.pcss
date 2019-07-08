@@ -26,12 +26,31 @@
         justify-content: space-between;
     }
 
+    &__project-number {
+        position: absolute;
+        font-size: 300px;
+        line-height: 48px;
+        font-weight: 900;
+        color: #f0f0f0;
+        left: 64%;
+        top: 46%;
+
+        @include laptop {
+            left: 56%;
+            top: 40%;
+        }
+    }
+
     &__slides {
         position: relative;
         display: flex;
         flex-direction: column;
-        flex-basis: 980px;
+        flex-basis: 66%;
         align-self: flex-start;
+
+        @include laptop {
+            flex-basis: 56%;
+        }
     }
 
     &__content {
@@ -40,11 +59,10 @@
 
     &__thumbnails {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         position: absolute;
         right: 0;
         bottom: 50px;
-        //box-shadow: -22px 44px 70px black;
     }
 
     &__thumbnail-item {
@@ -56,11 +74,17 @@
         &.active {
             border: 3px solid $active-slide;
         }
+
+        @include laptop {
+            &:last-child {
+                display: none;
+            }
+        }
     }
 
     &__controls {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         right: 0;
         align-self: flex-end;
         background:$dark-blue;
@@ -80,11 +104,11 @@
     }
 
     &__control-next {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
     }
 
     &__control-prev {
-        transform: rotate(-90deg);
+        transform: rotate(90deg);
     }
 
     &__control-icon {
@@ -99,12 +123,12 @@
         background: $lighten-grey;
         padding: 16px 20px;
         border-radius: 22px;
-        font-size: 15px;
+        font-size: 14px;
         color: $text-color;
         font-weight: 600;
 
         &:not(:last-child) {
-            margin-right: 15px;
+            margin-right: 14px;
         }
     }
 }

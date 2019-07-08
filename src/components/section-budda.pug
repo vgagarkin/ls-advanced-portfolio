@@ -1,0 +1,9 @@
+.section-budda
+    .section-budda__parallax
+        .section-budda__parallax-wrapper
+            - for (var p=1; p<7; p++) {
+            .section-budda__parallax-layer(class=`layer-${p}` data-speed=`${p === 2 ? '' : p * 2.4}`)
+                +image(`content/budda-parallax-${p}.png`, 'section-budda__parallax-image')
+            - }
+    include reviews
+    include feedback

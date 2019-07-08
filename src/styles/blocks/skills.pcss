@@ -5,7 +5,7 @@
     .wrapper {
         display: grid;
         row-gap: 80px;
-        grid-template-columns: 35% auto auto;
+        grid-template-columns: 36% auto auto;
 
         &:before {
             content: '';
@@ -14,7 +14,19 @@
             -webkit-background-size: contain;
             background-size: 140%;
             background-repeat: no-repeat;
-            background-position: -85px bottom;
+            background-position: -86px bottom;
+
+            @include laptop {
+                background-position: 70% bottom;
+                -webkit-background-size: 182%;
+                background-size: 182%;
+                
+            }
+        }
+
+        @include laptop {
+            max-width: 100%;
+            grid-template-columns: 32% auto auto;
         }
     }
 
@@ -24,21 +36,33 @@
         margin: 0 auto;
         width: 40%;
         grid-area: 1 / 1 / 2 / 4;
+
+        @include laptop {
+            width: 46%;
+        }
     }
 
     &__wrapper {
-        width: 786px;
+        max-width: 786px;
         display: grid;
         grid-template-rows: auto auto;
         row-gap: 50px;
-        grid-area: 2 / 3 / 3 / 4;
+        grid-area: 2 / 2 / 3 / 4;
+        justify-self: end;
+
+        @include laptop {
+            justify-self: start;
+            width: 100%;
+            max-width: initial;
+            padding-right: 5rem;
+        }
     }
 
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto 1fr;
-        column-gap: 55px;
+        column-gap: 54px;
         row-gap: 40px;
     }
 
@@ -54,8 +78,8 @@
 
     &__item-progressbar {
         display: inline-block;
-        width: 155px;
-        height: 155px;
+        width: 100%;
+        height: 100%;
         transform: rotate(-180deg);
     }
 

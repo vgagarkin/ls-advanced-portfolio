@@ -1,5 +1,5 @@
 .feedback {
-    margin-top: 175px;
+    margin-top: 176px;
     padding-bottom: 134px;
 
     &__title {
@@ -20,9 +20,14 @@
         grid-template-rows: auto auto;
         grid-template-columns: 30px 1fr;
         column-gap: 20px;
-        row-gap: 25px;
+        row-gap: 26px;
         border-bottom: 1px solid;
         padding-bottom: 10px;
+        transition: $transition;
+
+        &:hover {
+            border-color: $link-hover;
+        }
     }
 
     &__label-text {
@@ -36,6 +41,9 @@
         fill: $text-color;
         opacity: .3;
         align-self: center;
+        transition: $transition;
+        max-height: 30px;
+        max-width: 30px;
     }
 
     &__field {
@@ -46,6 +54,17 @@
         line-height: 26px;
         color:$text-color;
         background: transparent;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $link-hover;
+
+            & ~ .feedback__label-icon {
+                fill: $link-hover;
+                opacity: 1;
+            }
+        }
     }
 
     &__block--name {

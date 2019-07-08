@@ -7,6 +7,11 @@
         grid-template-rows: 1fr auto;
         grid-template-columns: 33% 1fr;
         column-gap: 130px;
+
+        @include laptop {
+            grid-template-columns: 16% 1fr;
+            column-gap: 92px;
+        }
     }
 
     .copyright {
@@ -28,6 +33,11 @@
             text-transform: uppercase;
             font-weight: bold;
             max-width: 60%;
+        }
+
+        @include laptop {
+            grid-template-columns: 1fr;
+            row-gap: 24px;
         }
     }
 

@@ -4,7 +4,7 @@
 
 html {
   @include desktop {
-    font-size: 15px;
+    font-size: 16px;
   }
   @include tablets {
     font-size: 14px;
@@ -123,8 +123,8 @@ img {
   .link-icon {
     transition: $transition;
     fill: $links-color;
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     margin-right: 20px;
   }
 
@@ -151,30 +151,13 @@ img {
   color: white;
   width: 350px;
   height: 80px;
-  border-radius: 40px 5px 40px 5px;
+  border-radius: 40px 6px 40px 6px;
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   transition: $transition;
 
   &:hover {
-    border-radius: 5px 40px 5px 40px;
-  }
-}
-
-.section__budda-bg {
-  -webkit-background-size: cover;
-  background-size: cover;
-  position: relative;
-  padding-top: 250px;
-
-  &:before {
-    content: '';
-    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
-    background: #fff;
-    height: 90px;
-    width: 100vw;
-    position: absolute;
-    top: 0;
+    border-radius: 6px 40px 6px 40px;
   }
 }
