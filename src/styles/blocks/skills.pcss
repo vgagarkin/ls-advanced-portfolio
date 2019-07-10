@@ -58,18 +58,22 @@
         }
     }
 
-    &__list {
+    &__row-item {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto 1fr;
-        column-gap: 54px;
         row-gap: 40px;
     }
 
-    &__list-name {
+    &__row-name {
         grid-area: 1 / 1 / 2 / 5;
         font-size: 24px;
         font-weight: 700;
+    }
+
+    &__row-elements {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 54px;
     }
 
     &__item {
@@ -95,8 +99,6 @@
     &__item-progress {
         stroke-dasharray: 285;
         stroke-dashoffset: 285;
-        animation: fill 100s linear infinite;
-        animation-play-state: paused;
     }
 
     &__item-progress[style="animation-delay: -100s"] {

@@ -1,5 +1,32 @@
 include socials
 
+- var footerMenuArr = [
+-   {
+-       linkText: 'Главная',
+-       link: '#welcome-section'
+-   },
+-   {
+-       linkText: 'Обо мне',
+-       link: '#hero'
+-   },
+-   {
+-       linkText: 'Навыки',
+-       link: '#skills'
+-   },
+-   {
+-       linkText: 'Работы',
+-       link: '#projects'
+-   },
+-   {
+-       linkText: 'Отзывы',
+-       link: '#reviews'
+-   },
+-   {
+-       linkText: 'Связаться',
+-       link: '#feedback'
+-   },
+- ]
+
 footer.footer
     .wrapper
         .copyright
@@ -8,7 +35,7 @@ footer.footer
                 .copyright__name Владимир Гагаркин
                 .copyright__text.text Личный сайт <br> веб-разработчика
         .footer__content
-            +nav('main-menu', 'footer',['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'])
+            +nav('main-menu', 'footer', footerMenuArr)
             .footer__description
                 .footer__description-text.text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                 +socials('socials', 'footer', [

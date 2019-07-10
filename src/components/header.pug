@@ -1,9 +1,36 @@
 include socials
 
+- var headerMenuArr = [
+-   {
+-       linkText: 'Главная',
+-       link: '#welcome-section'
+-   },
+-   {
+-       linkText: 'Обо мне',
+-       link: '#hero'
+-   },
+-   {
+-       linkText: 'Навыки',
+-       link: '#skills'
+-   },
+-   {
+-       linkText: 'Работы',
+-       link: '#projects'
+-   },
+-   {
+-       linkText: 'Отзывы',
+-       link: '#reviews'
+-   },
+-   {
+-       linkText: 'Связаться',
+-       link: '#feedback'
+-   },
+- ]
+
 header.header
   .wrapper
     include logo
-    +nav('main-menu', 'header', ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'])
+    +nav('main-menu', 'header', headerMenuArr)
     +socials('socials', 'header', [
           {name: 'insta', link: 'https://instagram.com/vgagarkin'},
           {name: 'vk', link: 'https://vk.com/vladimir.gagarkin'},

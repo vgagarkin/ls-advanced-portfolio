@@ -50,17 +50,4 @@ section.skills
             p.skills__decription.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
                                     | Чуть позже я освежу в нём свой контент. А пока посмотрите,
                                     | как тут всё классно и красиво!
-        .skills__wrapper
-            each skillsRow, index in arSkills
-                .skills__list
-                    .skills__list-name #{skillGroupName[index]}
-                    each skillsItem in skillsRow
-                        .skills__item
-                            svg.skills__item-progressbar(viewbox="0 0 100 100" preserveaspectratio="none")
-                                defs
-                                    lineargradient#gradient(x1="100%" y1="-20%" x2="0%" y2="0%")
-                                        stop(offset="0%" style="stop-color: #ad00ed")
-                                        stop(offset="100%" style="stop-color: #5500f2")
-                                circle.skills__item-circle.circle(cx="50" cy="50" r="45" stroke-width="5")
-                                circle.skills__item-progress.circle(cx="50" cy="50" r="45" style=`animation-delay: -${skillsItem.skillValue}s` stroke-width="10" stroke="url(#gradient)")
-                            span.circle__item-text #{skillsItem.techName}
+        #skills-container

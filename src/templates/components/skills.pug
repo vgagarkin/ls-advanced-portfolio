@@ -1,0 +1,27 @@
+script(type="text/x-template")#skills-list
+    .skills__wrapper
+        .skills__row(v-for="skill in skills" )
+            row(
+                :skill="skill"
+            )
+
+script(type="text/x-template")#skills-row
+    .skills__row-item
+        .skills__row-name {{skill.skillsGroupName}}
+        .skills__row-elements
+            .skills__element(v-for="(skillValue, skillName) in skill.skills")
+                skill(
+                    :skillName="skillName"
+                    :skillValue="skillValue"
+                )
+
+script(type="text/x-template")#skill
+    .skills__item
+        svg.skills__item-progressbar(viewBox="0 0 100 100" preserveAspectRatio="none")
+            defs
+                linearGradient(id="gradient" x1="100%" y1="-20%" x2="0%" y2="0%")
+                    stop(offset="0%" style="stop-color: #ad00ed")
+                    stop(offset="100%" style="stop-color: #5500f2")
+            circle.skills__item-circle.circle(cx="50" cy="50" r="45" stroke-width="5")
+            circle.skills__item-progress.circle(cx="50" cy="50" r="45" ref="skill-value" stroke-width="10" stroke="url(#gradient)")
+        span.circle__item-text {{skillName}}
