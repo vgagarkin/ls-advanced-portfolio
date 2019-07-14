@@ -6,14 +6,19 @@
         grid-gap: 80px;
     }
 
+    &__comment-item {
+        display: grid;
+    }
+
     &__comment-list {
         grid-area: 2 / 1 / 3 / 3;
         grid-template-columns: 50% 50%;
+        grid-auto-flow: column;
         display: grid;
         column-gap: 30px;
     }
 
-    &__comment-item {
+    &__comment-inner {
         display: grid;
         grid-template-columns: 96px 1fr;
         grid-template-rows: 1fr 76px;
@@ -45,7 +50,10 @@
         object-position: center center;
         -webkit-background-size: contain;
         background-size: contain;
-        border-radius: 100%;
+
+        img {
+            border-radius: 100%;
+        }
     }
 
     &__comment-sender-info {

@@ -4,6 +4,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 import "./scripts/skills";
+import "./scripts/reviews";
 import "./scripts/parallax";
 
 let navLinks = document.querySelectorAll('.main-menu .main-menu__link');
