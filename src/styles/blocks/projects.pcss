@@ -3,6 +3,11 @@
 
     &__title {
         margin-bottom: 100px;
+
+        @include tablets-small {
+            text-align: center;
+            margin-bottom: 50px;
+        }
     }
 
     &__content-wrapper,
@@ -18,12 +23,22 @@
         &.show {
             display: grid;
             grid-gap: 50px;
+
+            @include tablets-small {
+                padding: 0 16%;
+                justify-items: center;
+                row-gap: 30px;
+            }
         }
     }
 
     &__list {
         display: flex;
         justify-content: space-between;
+
+        @include tablets-small {
+            flex-direction: column;
+        }
     }
 
     &__project-number {
@@ -38,6 +53,7 @@
         @include laptop {
             left: 56%;
             top: 40%;
+            z-index: -1;
         }
     }
 
@@ -49,12 +65,22 @@
         align-self: flex-start;
 
         @include laptop {
-            flex-basis: 56%;
+            flex-basis: 60%;
         }
     }
 
     &__content {
         flex-basis: 350px;
+
+        @include tablets-small {
+            margin-top: 50px;
+        }
+    }
+
+    &__about-description {
+        @include tablets-small {
+            text-align: center;
+        }
     }
 
     &__thumbnails {

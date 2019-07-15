@@ -6,7 +6,11 @@
 
     .wrapper {
         display: grid;
-        grid-template-columns: .75fr 690px 1fr;
+        grid-template-columns: .74fr 690px 1fr;
+
+        @include desktop {
+            grid-template-columns: .3fr 2fr .7fr;
+        }
     }
 
     .socials--header {

@@ -4,6 +4,11 @@
     margin-bottom: 140px;
     background-color: $smoky-grey;
 
+    @include tablets-small {
+        margin-bottom: 100px;
+        padding-bottom: 140px;
+    }
+
     .wrapper {
         display: grid;
         max-width: 1010px;
@@ -12,6 +17,11 @@
 
         @include desktop {
             max-width: calc(100vw - 120px);
+        }
+
+        @include tablets-small {
+            column-gap: 94px;
+            max-width: calc(100vw - 68px);
         }
     }
 
@@ -29,11 +39,16 @@
         column-gap: 76px;
         row-gap: 30px;
         grid-template-columns: 100px 1fr;
+
+        @include tablets-small {
+            column-gap: 38px;
+        }
     }
 
     &__data-value {
         color:$text-color;
         font-weight: 600;
+        align-self: center;
     }
 
     &__content {
@@ -42,12 +57,27 @@
         @include desktop {
             padding-right: 70px;
         }
+
+        @include tablets-small {
+            padding-right: 0;
+        }
     }
 
     &__content {
         display: grid;
         grid-template-rows: 16px 40px 110px 1fr;
         row-gap: 36px;
+
+        @include tablets-small {
+            grid-template-rows: repeat(4, min-content);
+            row-gap: 10px;
+        }
+    }
+
+    &__text {
+        @include tablets-small {
+            margin-top: 40px;
+        }
     }
 
     &__post-scriptum {
@@ -61,6 +91,10 @@
             position: absolute;
             top: 10px;
             left: -56px;
+        }
+
+        @include tablets-small {
+            margin-top: 40px;
         }
     }
 

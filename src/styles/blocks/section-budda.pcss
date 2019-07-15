@@ -6,6 +6,10 @@
     background-color: $smoky-blue;
     overflow: hidden;
 
+    @include tablets-small {
+        padding-top: 140px;
+    }
+
     &:before {
         content: '';
         clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
@@ -15,6 +19,10 @@
         position: absolute;
         top: -1px;
         z-index: 1;
+
+        @include tablets-small {
+            height: 38px;
+        }
     }
 
     &__parallax {
@@ -61,6 +69,13 @@
                     @include laptop {
                         right: -220px;
                     }
+
+                    @include tablets-small {
+                        height: 70vh;
+                        right: -36%;
+                        top: auto;
+                        bottom: 40px;
+                    }
                 }
             }
 
@@ -77,6 +92,13 @@
                         left: 4%;
                         bottom: 1%;
                     }
+
+                    @include tablets-small {
+                        -webkit-transform: rotate(-13deg) scale(1.4);
+                        transform: rotate(-13deg) scale(1.4);
+                        left: 0;
+                        bottom: 1%;
+                    }
                 }
             }
 
@@ -90,6 +112,15 @@
                         left: 30%;
                         transform: scale(1.8);
                     }
+
+                    @include tablets-small {
+                        top: auto;
+                        bottom: -30%;
+                    }
+
+                    @include tablets {
+                        bottom: -22%;
+                    }
                 }
             }
 
@@ -97,6 +128,17 @@
                 .section-budda__parallax-image {
                     bottom:-20%;
                     left: -5%;
+
+                    @include tablets-small {
+                        bottom: -24%;
+                        left: auto;
+                        right: -12%;
+                    }
+
+                    @include tablets {
+                        bottom: 0;
+                        right: -2%;
+                    }
                 }
             }
         }

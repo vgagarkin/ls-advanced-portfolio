@@ -16,8 +16,20 @@
   }
 }
 
+@mixin tablets-small() {
+  @media screen and (max-width: $bp-tablets-small) {
+    @content;
+  }
+}
+
 @mixin phones() {
   @media screen and (max-width: $bp-phones) {
+    @content;
+  }
+}
+
+@mixin phones-wide() {
+  @media screen and (max-width: $bp-phones-wide) {
     @content;
   }
 }

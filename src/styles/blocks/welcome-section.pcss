@@ -4,6 +4,10 @@
     clip-path: polygon(0% 0%, 0% 94%, 50% 100%, 100% 94%, 100% 0%);
     background-color: $smoky-grey;
 
+    @include tablets-small {
+        clip-path: polygon(0 0,0 94%,50% 97%,100% 94%,100% 0);
+    }
+
     &:before {
         content: '';
         width: 100%;
@@ -46,6 +50,10 @@
                     object-fit: cover;
                     width: 100%;
                     object-position: right top;
+
+                    @include tablets {
+                        top: 400px;
+                    }
                 }
             }
 
@@ -69,12 +77,22 @@
                 .welcome-section__parallax-image {
                     top: 700px;
                     right: 0;
+
+                    @include tablets {
+                        top: auto;
+                        bottom: -16%;
+                    }
                 }
             }
 
             &.layer-6 {
                 .welcome-section__parallax-image {
                     top: 664px;
+
+                    @include tablets {
+                        top: auto;
+                        bottom: -20%;
+                    }
                 }
             }
 
@@ -109,6 +127,10 @@
                 grid-template-columns: auto min-content;
                 column-gap: 60px;
             }
+
+            @include tablets-small {
+                grid-template-columns: min-content;
+            }
         }
     }
 
@@ -120,6 +142,11 @@
         @include desktop {
             grid-area: 1 / 1 / 2 / 2;
             text-align: right;
+        }
+
+        @include tablets-small {
+            grid-area: 1 / 1 / 2 / 2;
+            text-align: center;
         }
     }
 
@@ -133,6 +160,11 @@
         @include desktop {
             grid-area: 1 / 2 / 2 / 3;
             text-align: left;
+        }
+
+        @include tablets-small {
+            grid-area: 2 / 1 / 3 / 2;
+            text-align: center;
         }
     }
 

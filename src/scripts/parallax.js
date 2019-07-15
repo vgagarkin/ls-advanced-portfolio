@@ -22,5 +22,5 @@ window.addEventListener('scroll', () => {
         moveLayer(scrollSectionBuddaStartPos, layersBuddaSection, 50);
     }
 
-    moveLayer(wScroll, layersWelcomeSection, 40);
+    moveLayer(wScroll, layersWelcomeSection, 50);
 });

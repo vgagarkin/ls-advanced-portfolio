@@ -4,6 +4,11 @@
 
     &__title {
         margin-bottom: 90px;
+
+        @include tablets-small {
+            margin-bottom: 44px;
+            text-align: center;
+        }
     }
 
     &__form {
@@ -86,5 +91,10 @@
 
     .btn {
         grid-area: 3 / 1 / 4 / 2;
+
+        @include tablets-small {
+            grid-area: 3 / 1 / 4 / 3;
+            margin: 0 auto;
+        }
     }
 }
