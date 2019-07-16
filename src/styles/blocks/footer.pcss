@@ -67,12 +67,28 @@
         }
     }
 
-    .main-menu--footer {
-        grid-area: 1 / 1 / 2 / 3;
-        align-self: start;
+    .main-menu {
+        &--footer {
+            grid-area: 1 / 1 / 2 / 3;
+            align-self: start;
+        }
 
-        @icnlude tablets-small {
+        @include tablets-small {
             grid-area: 1 / 1 / 2 / 2;
+        }
+
+        &__list {
+            @include tablets {
+                flex-wrap: wrap;
+                justify-content: start;
+            }
+        }
+
+        &__item {
+            @include tablets {
+                flex-basis: 25%;
+                margin-bottom: 30px;
+            }
         }
     }
 

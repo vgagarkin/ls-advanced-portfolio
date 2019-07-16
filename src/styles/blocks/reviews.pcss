@@ -1,21 +1,34 @@
 .reviews {
     .wrapper {
         display: grid;
-        grid-template-columns: 400px 500px;
-        grid-template-rows: 1fr;
+        grid-template-columns: 980px;
+        grid-template-rows: min-content 1fr;
         grid-gap: 80px;
+
+        @include phones-wide {
+            grid-template-columns: calc(100vw - 80px);
+        }
+    }
+
+    &__title-container {
+        display: grid;
+        grid-template-columns: max-content 130px;
+        column-gap: 90px;
+    }
+
+    &__comment-list {
+        grid-area: 2 / 1 / 3 / 2;
+        grid-auto-flow: column;
+        display: grid;
+        column-gap: 30px;
+        overflow: hidden;
     }
 
     &__comment-item {
         display: grid;
-    }
-
-    &__comment-list {
-        grid-area: 2 / 1 / 3 / 3;
-        grid-template-columns: 50% 50%;
-        grid-auto-flow: column;
-        display: grid;
-        column-gap: 30px;
+        padding-right: 30px;
+        width: 50%;
+        height: 230px;
     }
 
     &__comment-inner {
@@ -23,6 +36,11 @@
         grid-template-columns: 96px 1fr;
         grid-template-rows: 1fr 76px;
         grid-gap: 30px;
+        width: 100%;
+
+        @include tablets-small {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__comment-icon {
@@ -31,6 +49,10 @@
         width: 76px;
         margin-left: 20px;
         grid-area: 1 / 1 / 3 / 2;
+
+        @include tablets-small {
+            display: none;
+        }
     }
 
     &__comment-text {

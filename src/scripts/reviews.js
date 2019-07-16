@@ -50,8 +50,8 @@ new Vue({
                 initialIndex: 0,
                 prevNextButtons: false,
                 pageDots: false,
-                wrapAround: false,
-                groupCells: true
+                cellAlign: 'left',
+                contain: true
             }
         }
     },

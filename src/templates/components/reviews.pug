@@ -1,16 +1,16 @@
 script(type="text/x-template")#reviews-list
     .wrapper
-        h2.reviews__title.title Что обо мне говорят
-        .reviews__controls-wrapper
-            btns(
-                @changeReview="handleSlide"
-            )
-        ul.reviews__comment-list
-            flickity(ref="flickity" :options="flickityOptions")
-                li.reviews__comment-item(v-for="review in reviews")
-                    oneReview(
-                        :review="review"
-                    )
+        .reviews__title-container
+            h2.reviews__title.title Что обо мне говорят
+            .reviews__controls-wrapper
+                btns(
+                    @changeReview="handleSlide"
+                )
+        flickity.reviews__comment-list(ref="flickity" :options="flickityOptions")
+            li.reviews__comment-item(v-for="review in reviews")
+                oneReview(
+                    :review="review"
+                )
 
 
 script(type="text/x-template")#btns
