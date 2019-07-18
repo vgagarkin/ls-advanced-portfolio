@@ -9,12 +9,7 @@ const oneReview = {
 };
 
 const btns = {
-    template: "#btns",
-    methods: {
-        changeReview(direction) {
-            this.$emit('changeReview', direction);
-        }
-    }
+    template: "#btns"
 };
 
 new Vue({
@@ -37,11 +32,14 @@ new Vue({
         handleSlide(direction) {
             switch (direction) {
                 case "next":
-                    return this.$refs.flickity.next();
+                    this.$refs.flickity.next();
+                    break;
                 case "prev":
-                    return this.$refs.flickity.previous();
+                    this.$refs.flickity.previous();
+                    break;
             }
         }
+
     },
     data() {
         return {
@@ -51,13 +49,13 @@ new Vue({
                 prevNextButtons: false,
                 pageDots: false,
                 cellAlign: 'left',
-                contain: true
+                contain: true,
+                draggable: false
             }
         }
     },
     created() {
         const data = require("../data/reviews.json");
-        this.reviews = data;
-        this.avatar(data);
+        this.reviews = this.avatar(data);
     }
 });

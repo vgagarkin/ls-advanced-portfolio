@@ -1,0 +1,71 @@
+script(type="text/x-template")#projects-container
+    .projects__list
+        span.projects__project-number {{currentProject.id}}
+        images(
+            :projects="projects"
+            :currentProject="currentProject"
+            :currentIndex="currentIndex"
+            :projectsLengthIndex="projectsLengthIndex"
+            @slide="handleSlide"
+            @slideTo="handleSlideTo"
+        )
+        info(
+            :currentProject="currentProject"
+        )
+
+
+script(type="text/x-template")#projects-images
+    ul.projects__slides
+        img.projects__slide(:src="currentProject.images.big")
+        thumbs(
+            :projects="reversedProjects"
+            :currentProject="currentProject"
+            @slideTo="projectIndex => $emit('slideTo', projectIndex)"
+        )
+        btns(
+            @slide="direction => $emit('slide', direction)"
+            :currentIndex="currentIndex"
+            :projectsLengthIndex="projectsLengthIndex"
+        )
+
+script(type="text/x-template")#projects-thumbs
+    ul.projects__thumbnails
+        button.projects__thumbnail-item(
+                v-for="(project, index) in projects"
+                type='button'
+                :data-value="project.id"
+                ref="thumb-btn"
+                :class="{active: project.id === currentProject.id}"
+                @click="$emit('slideTo', project.id)"
+            )
+
+script(type="text/x-template")#projects-btns
+    .projects__controls
+        button.projects__control.next(
+                @click="$emit('slide', 'next')"
+                type='button'
+                :class="{disabled: currentIndex === projectsLengthIndex}"
+            )
+            +icon('arrow-down', 'projects__control-icon')
+        button.projects__control.prev(
+                @click="$emit('slide', 'prev')"
+                type="button"
+                :class="{disabled: currentIndex === 0}"
+            )
+            +icon('arrow-down', 'projects__control-icon')
+
+script(type="text/x-template")#projects-info
+    .projects__content
+        .projects__content-wrapper
+            tags(
+                :tags="tagsArray"
+            )
+            h5.projects__about-title.title {{currentProject.title}}
+            p.projects__about-description.text {{currentProject.desc}}
+            a.projects__link.link(:href="currentProject.link.url" target="_blank" :title="currentProject.title")
+                +icon('link', 'link-icon')
+                | {{currentProject.link.text}}
+
+script(type="text/x-template")#projects-tags
+    ul.projects__tags
+        li.projects__tag(v-for="tag in tags") {{tag}}

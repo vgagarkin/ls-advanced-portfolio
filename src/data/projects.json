@@ -1,0 +1,53 @@
+[{
+    "id": 1,
+    "images": {
+          "big": "project_big_1.jpg",
+          "small": "project_small_1.jpg"
+      },
+    "title": "Проект #1",
+    "desc": "1 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!",
+    "tags": "HTML, CSS, JavaScript",
+    "link": {
+          "url": "https://github.com/vgagarkin",
+          "text": "Подробнее"
+      }
+},{
+    "id": 2,
+    "images": {
+          "big": "project_big_2.jpg",
+          "small": "project_small_2.jpg"
+      },
+    "title": "Проект #2",
+    "desc": "2 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!",
+    "tags": "2 HTML, CSS, JavaScript",
+    "link": {
+          "url": "https://github.com/vgagarkin",
+          "text": "Подробнее"
+      }
+},{
+    "id": 3,
+    "images": {
+          "big": "project_big_3.jpg",
+          "small": "project_small_3.jpg"
+      },
+    "title": "Проект #3",
+    "desc": "3 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!",
+    "tags": "3 HTML, CSS, JavaScript",
+    "link": {
+          "url": "https://github.com/vgagarkin",
+          "text": "Подробнее"
+      }
+},{
+    "id": 4,
+    "images": {
+          "big": "project_big_4.jpg",
+          "small": "project_small_4.jpg"
+      },
+    "title": "Проект #4",
+    "desc": "4 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!",
+    "tags": "HTML, CSS, JavaScript",
+    "link": {
+          "url": "https://github.com/vgagarkin",
+          "text": "Подробнее"
+      }
+}]

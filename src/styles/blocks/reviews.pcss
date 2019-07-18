@@ -107,9 +107,14 @@
         fill: $text-color;
         transition: $transition;
 
-        &:hover {
+        &:not(.disabled):hover {
             fill: white;
             background: $text-color;
+        }
+
+        &.disabled {
+            cursor: default;
+            opacity: .3;
         }
     }
 
