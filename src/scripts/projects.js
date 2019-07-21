@@ -22,6 +22,9 @@ const thumbs = {
   }
 };
 
+const mama = "zaluperrrrr";
+console.log(mama);
+
 const btns = {
   template: "#projects-btns",
   props: {
