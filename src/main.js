@@ -8,7 +8,7 @@ import "./scripts/projects";
 import "./scripts/reviews";
 import "./scripts/parallax";
 
-let navLinks = document.querySelectorAll('.main-menu .main-menu__link');
+let navLinks = document.querySelectorAll(".main-menu .main-menu__link");
 
 const links = document.querySelectorAll("[href^='#']");
 const V = 1; // scrolling speed
@@ -30,9 +30,9 @@ for (const iter of links) {
       let progress = time - start;
 
       let coordY =
-          coordAnchor < 0
-              ? Math.max(windowY - progress / V, windowY + coordAnchor)
-              : Math.min(windowY + progress / V, windowY + coordAnchor);
+        coordAnchor < 0
+          ? Math.max(windowY - progress / V, windowY + coordAnchor)
+          : Math.min(windowY + progress / V, windowY + coordAnchor);
 
       window.scrollTo(0, coordY);
       if (coordY != windowY + coordAnchor) {
