@@ -2,3 +2,5 @@ node_modules
 .idea
 dist
 public
+webpack.config.js
+postcss.config.js
