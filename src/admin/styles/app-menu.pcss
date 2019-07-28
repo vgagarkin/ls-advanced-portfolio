@@ -1,0 +1,29 @@
+.admin-menu {
+    background: $white;
+
+    &__items {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+    }
+
+    &__item {
+        padding: 30px 0 33px;
+
+    }
+
+    &__link {
+        transition: $transition;
+        padding: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: solid 3px;
+        border-color: $white;
+
+        &:hover,
+        &.router-link-exact-active {
+            border-color: $admin-active-color;
+            color: $admin-active-color;
+        }
+    }
+}

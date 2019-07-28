@@ -1,0 +1,43 @@
+.header {
+    background: $purple-gradient;
+
+    &__wrapper {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, max-content) 1fr;
+        justify-content: start;
+        align-items: center;
+        column-gap: 20px;
+        padding: 20px 0;
+        color: $white;
+    }
+
+    &__ava {
+        img {
+            max-width: 44px;
+            max-height: 44px;
+            border-radius: 100%;
+        }
+    }
+
+    &__name {
+        font-size: $font-size-name;
+        font-weight: 600;
+    }
+
+    &__description {
+        color: $white;
+        opacity: .5;
+        font-size: $font-size-small;
+    }
+
+    &__logout {
+        justify-self: end;
+        opacity: .5;
+        transition: $transition;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
