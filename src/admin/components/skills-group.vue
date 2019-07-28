@@ -50,7 +50,8 @@
                     percent: "",
                     category: this.category.id
                 },
-                formIsBlocked: false
+                formIsBlocked: false,
+                newCategory: false
             }
         }
     }

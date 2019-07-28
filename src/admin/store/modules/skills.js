@@ -7,8 +7,8 @@ export default {
     SET_SKILLS: (state, skills) => {
       state.skills = skills;
     },
-    ADD_SKILL: (state, skill) => {
-      state.skills.push(skill);
+    ADD_SKILL: (state, newSkill) => {
+      state.skills.push(newSkill);
     },
     EDIT_SKILL: (state, existedSkill) => {
       state.skills = state.skills.map(skill => {
@@ -61,6 +61,11 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    }
+  },
+  getters: {
+    getSkills: state => {
+      return state.skills;
     }
   }
 };
