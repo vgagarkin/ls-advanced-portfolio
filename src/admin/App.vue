@@ -1,3 +1,6 @@
-<template lang="pug">
-  h1 Welcome to the Vue App
+<template lang="pug" id="app">
+    .app
+        app-header
+        app-menu
+        router-view
 </template>
