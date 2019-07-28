@@ -23,6 +23,10 @@
 
     .wrapper {
         max-width: $bp-desktop;
+        
+        &.ov {
+            overflow: visible;
+        }
     }
 
     .app {
