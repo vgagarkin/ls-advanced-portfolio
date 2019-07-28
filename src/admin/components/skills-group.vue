@@ -1,8 +1,12 @@
 <template lang="pug">
     .admin-skills__group-inner
-        .admin-skills__group-title
+        .admin-skills__group-title(v-if="editCategoryMod === false")
             h3 {{category.category}}
-            button.admin-skills__group-change Изменить
+            button.admin-skills__group-change(@click="editCategoryMod = true") Изменить
+        .admin-skills__group-title(v-else)
+            input(type="text" v-model="editCategory.title")
+            button.admin-skills__group-change(@click="changeCategoryTitle") Сохранить
+            button.admin-skills__group-change(@click="editCategoryMod = false") Отменить
         ul.admin-skills__list
             skillsItem(
                 v-for="skill in skills"
@@ -30,6 +34,7 @@
         },
         methods: {
             ...mapActions('skills', ['addSkill']),
+            ...mapActions('categories', ['saveCategory']),
             async addNewSkill() {
                 this.formIsBlocked = true;
                 try {
@@ -42,6 +47,15 @@
                     this.formIsBlocked = false;
                 }
             },
+            async changeCategoryTitle() {
+                try {
+                    await this.saveCategory(this.editCategory);
+                } catch(error) {
+                    console.log(error.message);
+                } finally {
+                    this.editCategoryMod = false;
+                }
+            },
         },
         data() {
             return {
@@ -51,7 +65,13 @@
                     category: this.category.id
                 },
                 formIsBlocked: false,
-                newCategory: false
+                newCategory: false,
+                editCategoryMod: false,
+                editCategory: {
+                    id: this.category.id,
+                    title: this.category.category,
+                    category: this.category.category
+                }
             }
         }
     }
