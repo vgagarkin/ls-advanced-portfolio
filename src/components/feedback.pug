@@ -4,16 +4,16 @@ section.feedback
         form.feedback__form
             label.feedback__block.feedback__block--name
                 .feedback__label-text.text Введите ваше имя
-                input.feedback__field(type='text' name='name' placeholder='Владимир Гагаркин')
+                input.feedback__field(type='text' name='name' placeholder='Владимир Гагаркин' required="required")
                 +icon('user', 'feedback__label-icon')
             label.feedback__block.feedback__block--email
                 .feedback__label-text.text Введите ваш email
-                input.feedback__field(type='text' name='email' placeholder='gagarkin@pxlbox.io')
+                input.feedback__field(type='email' name='email' placeholder='gagarkin@pxlbox.io' required="required")
                 +icon('envelope', 'feedback__label-icon')
             label.feedback__block.feedback__block--text
                 .feedback__label-text.text Сообщение к письму
                 textarea.feedback__field(name='text'
                     placeholder='Требуется ваша помощь в создании сайта. ' +
-                    'Интересуют сроки и цена вопроса')
+                    'Интересуют сроки и цена вопроса' required="required")
                 +icon('message', 'feedback__label-icon')
             button.btn.btn--submit(type='sumbit') Отправить

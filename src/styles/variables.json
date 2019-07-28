@@ -1,4 +1,8 @@
 {
+  "font-size-default": "16px",
+  "font-size-small": "14px",
+  "font-size-name": "18px",
+  "white": "white",
   "text-color": "#414c63",
   "links-color": "#4b6fd7",
   "bp-desktop-hd": "1800px",
@@ -17,5 +21,8 @@
   "circle-color": "#eaeaea",
   "progress-color": "#5500f2",
   "smoky-grey": "#f9f9f9",
-  "smoky-blue": "#98c4f3"
+  "smoky-blue": "#98c4f3",
+  "purple-gradient": "linear-gradient(to right, #3e3e59, #454573)",
+  "admin-page-bg": "#F7F9FE",
+  "admin-active-color": "#383bcf"
 }
