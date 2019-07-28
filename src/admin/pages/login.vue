@@ -25,6 +25,7 @@
                         data: { token }
                     } = await $axios.post("/login", this.userData);
                     localStorage.setItem('token', token);
+                    $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
                     this.$router.replace("/");
                 } catch(error) {
                     console.log(error.message);
