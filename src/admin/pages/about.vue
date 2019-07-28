@@ -1,5 +1,5 @@
 <template lang="pug">
-    .wrapper
+    .wrapper.ov
         .admin-page__content
             .admin-page__title-container
                 h1.admin-page__title Блок "Обо мне"
@@ -44,7 +44,7 @@
             }
 
             try {
-                skills = this.fetchSkills();
+                const skills = this.fetchSkills();
             } catch(error) {
                 console.log(error.message);
             }

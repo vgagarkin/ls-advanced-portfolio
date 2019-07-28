@@ -1,5 +1,6 @@
 <template lang="pug">
-    h1 Reviews
+    .wrapper.ov
+        h1 Reviews
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template lang="pug">
-    h1 Projects
+    .wrapper.ov
+        h1 Projects
 </template>
 
 <script>
