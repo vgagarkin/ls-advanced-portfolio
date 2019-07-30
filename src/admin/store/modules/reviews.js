@@ -1,71 +1,53 @@
+import { convertIntoFormData } from "@/helpers/forms";
+
 export default {
   namespaced: true,
   state: {
-    skills: []
+    reviews: []
   },
   mutations: {
-    SET_SKILLS: (state, skills) => {
-      state.skills = skills;
+    ADD_REVIEW: (state, newReview) => {
+      state.reviews.push(newReview);
     },
-    ADD_SKILL: (state, newSkill) => {
-      state.skills.push(newSkill);
+    SET_REVIEWS: (state, reviews) => {
+      state.reviews = reviews;
     },
-    EDIT_SKILL: (state, existedSkill) => {
-      state.skills = state.skills.map(skill => {
-        return skill.id === existedSkill.id ? existedSkill : skill;
-      });
-    },
-    REMOVE_SKILL: (state, skillId) => {
-      state.skills = state.skills.filter(skill => skill.id !== skillId);
+    REMOVE_REVIEW: (state, reviewId) => {
+      state.reviews = state.reviews.filter(review => review.id !== reviewId);
     }
   },
   actions: {
-    async addSkill({ commit }, newSkill) {
+    async addReview({ commit }, newReview) {
+      const newRewiewFormData = convertIntoFormData(newReview);
       try {
-        const { data: skill } = await this.$axios.post("/skills", newSkill);
-        commit("ADD_SKILL", skill);
-      } catch (error) {
-        throw new Error(
-          error.response.data.error || error.response.data.message
+        const { data: review } = await this.$axios.post(
+          "/reviews",
+          newRewiewFormData
         );
+        commit("ADD_REVIEW", review);
+      } catch (error) {
+        console.log(error.response.data.errors);
       }
     },
-    async saveSkill({ commit }, existedSkill) {
+    async fetchReviews({ commit }) {
       try {
-        const response = await this.$axios.post(
-          `/skills/${existedSkill.id}`,
-          existedSkill
-        );
-        commit("EDIT_SKILL", existedSkill);
-      } catch (error) {
-        throw new Error(
-          error.response.data.error || error.response.data.message
-        );
-      }
-    },
-    async removeSkill({ commit }, skillId) {
-      try {
-        const response = await this.$axios.delete(`/skills/${skillId}`);
-        commit("REMOVE_SKILL", skillId);
-      } catch (error) {
-        throw new Error(
-          error.response.data.error || error.response.data.message
-        );
-      }
-    },
-    async fetchSkills({ commit }) {
-      try {
-        const response = await this.$axios.get("/skills/152");
-        commit("SET_SKILLS", response.data.reverse());
-        return response;
+        const { data: reviews } = await this.$axios.get("/reviews/152");
+        commit("SET_REVIEWS", reviews.reverse());
+        return reviews;
       } catch (error) {
         console.log(error);
       }
-    }
-  },
-  getters: {
-    getSkills: state => {
-      return state.skills;
+    },
+    async removeReview({ commit }, reviewId) {
+      try {
+        const { data: reviews } = await this.$axios.delete(
+          `/reviews/${reviewId}`
+        );
+        commit("REMOVE_REVIEW", reviewId);
+        return reviews;
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
