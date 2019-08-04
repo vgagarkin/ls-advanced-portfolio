@@ -173,7 +173,7 @@
             validateCategoryTitle() {
                 if (this.editCategory.title.length < 5) {
                     this.validatedCategoryTitle = false;
-                    this.validateCategoryTitleError = "Введите новое название категории";
+                    this.validateCategoryTitleError = "Введите новое название группы";
                 } else {
                     this.validatedCategoryTitle = true;
                     this.validateCategoryTitleError = "";
