@@ -8,7 +8,7 @@
 
 
 <script>
-    import {mapState, mapActions, mapGetters} from 'vuex';
+    import { mapState, mapActions } from 'vuex';
 
     export default {
         name: "app",
@@ -53,6 +53,7 @@
     .app {
         background-color: $admin-page-bg;
         min-height: 100vh;
+        padding-bottom: 30px;
     }
 
     .admin {
@@ -142,6 +143,27 @@
                 font-weight: bold;
                 line-height: 1.62;
                 color: $text-color;
+            }
+        }
+
+        &__label {
+            position: relative;
+
+            &.error {
+                input {
+                    border-color: firebrick;
+                }
+
+                &:before {
+                    position: absolute;
+                    bottom:100%;
+                    width: 150px;
+                    background: firebrick;
+                    color: $white;
+                    padding: 5px 10px;
+                    font-size: .7rem;
+                    content: attr(data-error);
+                }
             }
         }
     }

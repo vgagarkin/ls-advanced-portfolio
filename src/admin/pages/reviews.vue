@@ -25,8 +25,8 @@
                 .admin-reviews__wrapper
                     button.admin__btn.btn-add-review(
                             type="button"
-                            @click="addNewReviewOn = true"
-                            v-if="addNewReviewOn === false"
+                            :class="{disabled: addNewReviewOn === true}"
+                            @click="addNewReviewOn === false ? addNewReviewOn = true : ''"
                         ) Добавить отзыв
                     review(
                         v-for="review in reviews"
@@ -37,6 +37,7 @@
 
 <script>
     import { mapActions, mapState } from "vuex";
+    import store from "@/store";
 
     export default {
         name: "reviews",
@@ -50,6 +51,7 @@
         },
         methods: {
             ...mapActions('reviews', ['addReview', 'fetchReviews']),
+            ...mapActions("tooltips", ["showTooltip"]),
             uploadFile(event) {
                 const file = event.target.files[0];
                 this.newReview.photo = file;
@@ -59,25 +61,38 @@
                 const reader = new FileReader();
                 try {
                     reader.readAsDataURL(file);
-                } catch (e) {
-                    //тут вывести ошибки
+                } catch (error) {
+                    this.showTooltip({
+                        type: "error",
+                        text: error
+                    });
                 }
             },
             async addNewReview() {
                 try {
                     await this.addReview(this.newReview);
                     this.newReview = {};
+                    this.showTooltip({
+                        type: "success",
+                        text: "Отзыв успешно добавлен"
+                    });
                 } catch(error) {
-                    console.log(error.message);
+                    this.showTooltip({
+                        type: "error",
+                        text: error
+                    });
                 } finally {
                     this.addNewReviewOn = false;
                 }
             }
         },async created() {
             try {
-                await this.fetchReviews();
-            } catch {
-                console.log(error.message);
+                await this.fetchReviews(store.getters["user/userId"]);
+            } catch(error) {
+                this.showTooltip({
+                    type: "error",
+                    text: error
+                });
             }
         },
         data() {
@@ -95,6 +110,14 @@
 </script>
 
 <style lang="postcss">
+    .new-review {
+        &__form {
+            background: $white;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: $admin-page-shadow;
+        }
+    }
 
     .admin-reviews {
         &__wrapper {
@@ -105,11 +128,19 @@
 
         &__item {
             background: $white;
-            box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
+            box-shadow: $admin-page-shadow;
         }
 
         &__author-ava {
             width: 70px;
+        }
+    }
+
+    .admin {
+        &__btn {
+            &.btn-add-review {
+                background-image: $admin-page-btn-gradient;
+            }
         }
     }
 

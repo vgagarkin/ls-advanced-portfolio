@@ -1,15 +1,16 @@
 <template lang="pug">
-    li
-        p(v-if="editMode === false")
-            span {{skill.title}}
+    .admin-skills__item(v-if="editMode === false")
+        span {{skill.title}}
+        .percent-value
             span {{skill.percent}}
-            button.skills__btn.btn-change(type="button" @click="editMode = true") Изменить
-            button.skills__btn.btn-remove(type="button" @click="deleteSkill") Удалить
-        p(v-else)
-            input(type="text" v-model="editedSkill.title")
-            input(type="text" v-model="editedSkill.percent")
-            button.skills__btn.btn-save(type="button" @click="changeSkill") Сохранить
-            button.skills__btn.btn-cancel(type="button" @click="editMode = false") Отменить
+        button.admin__btn.edit(type="button" @click="editMode = true")
+        button.admin__btn.remove(type="button" @click="$emit('deleteSkill', skill.id)")
+    .admin-skills__item(v-else)
+        input.admin-skills__input(type="text" v-model="editedSkill.title")
+        .percent-value
+            input.admin-skills__input(type="text" v-model="editedSkill.percent")
+        button.admin__btn.save(type="button" @click="changeSkill")
+        button.admin__btn.decline(type="button" @click="editMode = false")
 </template>
 
 <script>
@@ -21,20 +22,21 @@
           skill: Object
         },
         methods: {
-            ...mapActions('skills', ['removeSkill', 'saveSkill']),
-            async deleteSkill() {
-                try {
-                    await this.removeSkill(this.skill.id);
-                } catch(error) {
-                    console.log(error);
-                }
-            },
+            ...mapActions('skills', ['saveSkill']),
+            ...mapActions("tooltips", ["showTooltip"]),
             async changeSkill() {
                 try {
-                    await this.saveSkill(this.editedSkill);
+                    const response = await this.saveSkill(this.editedSkill);
                     this.editMode = false;
+                    this.showTooltip({
+                        type: "success",
+                        text: "Запись обновлена"
+                    });
                 } catch(error) {
-                    console.log(error);
+                    this.showTooltip({
+                        type: "error",
+                        text: error
+                    });
                 }
             }
         },

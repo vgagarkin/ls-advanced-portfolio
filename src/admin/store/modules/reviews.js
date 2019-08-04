@@ -26,16 +26,24 @@ export default {
         );
         commit("ADD_REVIEW", review);
       } catch (error) {
-        console.log(error.response.data.errors);
+        const arrErrors = [];
+        Object.keys(error.response.data.errors).forEach(oneError => {
+          arrErrors.push(error.response.data.errors[oneError][0]);
+        });
+        throw new Error(arrErrors.join(",") || error.response.data.message);
       }
     },
-    async fetchReviews({ commit }) {
+    async fetchReviews({ commit }, userId) {
       try {
-        const { data: reviews } = await this.$axios.get("/reviews/152");
+        const { data: reviews } = await this.$axios.get(`/reviews/${userId}`);
         commit("SET_REVIEWS", reviews.reverse());
         return reviews;
       } catch (error) {
-        console.log(error);
+        const arrErrors = [];
+        Object.keys(error.response.data.errors).forEach(oneError => {
+          arrErrors.push(error.response.data.errors[oneError][0]);
+        });
+        throw new Error(arrErrors.join(",") || error.response.data.message);
       }
     },
     async removeReview({ commit }, reviewId) {
@@ -46,7 +54,11 @@ export default {
         commit("REMOVE_REVIEW", reviewId);
         return reviews;
       } catch (error) {
-        console.log(error);
+        const arrErrors = [];
+        Object.keys(error.response.data.errors).forEach(oneError => {
+          arrErrors.push(error.response.data.errors[oneError][0]);
+        });
+        throw new Error(arrErrors.join(",") || error.response.data.message);
       }
     }
   }

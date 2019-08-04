@@ -15,6 +15,9 @@ export default {
         Object.keys(userObj).length === 0 && userObj.constructor === Object;
 
       return userObjectIsEmpty === false;
+    },
+    userId: state => {
+      return state.user.id;
     }
   }
 };

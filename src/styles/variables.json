@@ -2,6 +2,7 @@
   "font-size-default": "16px",
   "font-size-small": "14px",
   "font-size-name": "18px",
+  "font-size-admin-title": "21px",
   "white": "white",
   "text-color": "#414c63",
   "links-color": "#4b6fd7",
@@ -23,6 +24,9 @@
   "smoky-grey": "#f9f9f9",
   "smoky-blue": "#98c4f3",
   "purple-gradient": "linear-gradient(to right, #3e3e59, #454573)",
+  "admin-page-btn-gradient": "linear-gradient(to right, #006aed, #3f35cb)",
   "admin-page-bg": "#F7F9FE",
-  "admin-active-color": "#383bcf"
+  "admin-active-color": "#383bcf",
+  "admin-page-shadow": "4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07)",
+  "admin-skills-border-color": "#DEDEE0"
 }
