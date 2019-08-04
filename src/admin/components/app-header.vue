@@ -6,12 +6,24 @@
             .header__name Владимир Гагаркин
             .header__description Панель администрирования
             .header__logout
-                a.header__logout-link(href="#") Выйти
+                a.header__logout-link(@click="logout") Выйти
 </template>
 
 <script >
-    export default {
+    import $axios from "../requests";
 
+    export default {
+        methods: {
+            async logout() {
+                try {
+                    await $axios.post("/logout", this.userData);
+                    localStorage.removeItem('token');
+                    this.$router.replace("/login");
+                } catch(error) {
+                    console.log(error.message);
+                }
+            },
+        }
     }
 </script>
 
