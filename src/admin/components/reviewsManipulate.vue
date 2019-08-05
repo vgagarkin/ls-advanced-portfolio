@@ -124,10 +124,6 @@
                 this.review.photo = "";
             },
             async editExistedReview() {
-                //let authorValid = this.validateAuthor();
-                //let occValid = this.validateOcc();
-                //let textValid = this.validateText();
-                //if (authorValid && occValid && textValid) {
                     try {
                         const response = await this.editReview(this.review);
                         this.review = {
@@ -147,7 +143,6 @@
                             text: error.message
                         });
                     }
-                //}
             },
             authorValidate() {
 
@@ -165,12 +160,6 @@
                     occ: "",
                     text: ""
                 },
-                authorValidated: true,
-                authorValidateErrorText: "",
-                occValidated: true,
-                occValidateErrorText: "",
-                reviewValidated: true,
-                reviewValidateErrorText: "",
             }
         }
     }
