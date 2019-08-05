@@ -28,5 +28,6 @@
   "admin-page-bg": "#F7F9FE",
   "admin-active-color": "#383bcf",
   "admin-page-shadow": "4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07)",
-  "admin-skills-border-color": "#DEDEE0"
+  "admin-skills-border-color": "#DEDEE0",
+  "upload-image-bg": "#dee4ed"
 }

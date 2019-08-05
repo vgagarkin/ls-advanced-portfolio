@@ -65,6 +65,10 @@
 
             &.edit {
                 background: svg-load("pencil.svg",fill=rgba(#414c63, 1),width=14px,height=12px) center no-repeat;
+
+                &.blue {
+                    background: svg-load("pencil.svg",fill=rgba($admin-active-color, 1),width=14px,height=12px) center no-repeat;
+                }
             }
 
             &.save {

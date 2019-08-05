@@ -4,34 +4,23 @@
             .admin-page__title-container
                 h1.admin-page__title Блок "Отзывы"
             .admin-page__content-inner
-                .admin-reviews__add-container(v-if="addNewReviewOn === true")
-                    form.new-review__form
-                        .new-review__form-header Новый отзыв
-                        .new-review__form-fields
-                            label.new-review__form-label
-                                input.new-review__form-input(type="file" @change="uploadFile")
-                            label.new-review__form-label
-                                | Имя автора
-                                input.new-review__form-input(type="text" v-model="newReview.author")
-                            label.new-review__form-label
-                                | Титул автора
-                                input.new-review__form-input(type="text" v-model="newReview.occ")
-                            label.new-review__form-label
-                                | Отзыв
-                                textarea.new-review__form-input(v-model="newReview.text")
-                        .new-review__form-btns
-                            button.admin__btn.btn-cancel-review(@click="addNewReviewOn = false") Отменить
-                            button.admin__btn.btn-save-review(@click="addNewReview") Сохранить
+                reviewsManipulate(
+                    v-if="mode !== ''"
+                    :mode="mode"
+                    @closeAddForm="closeAddForm"
+                    @changemode="changemode"
+                )
                 .admin-reviews__wrapper
                     button.admin__btn.btn-add-review(
                             type="button"
-                            :class="{disabled: addNewReviewOn === true}"
-                            @click="addNewReviewOn === false ? addNewReviewOn = true : ''"
+                            :class="{disabled: mode !== ''}"
+                            @click="addReview"
                         ) Добавить отзыв
                     review(
                         v-for="review in reviews"
                         :review="review"
                         :key="review.id"
+                        @changemode="changemode"
                     )
 </template>
 
@@ -42,7 +31,8 @@
     export default {
         name: "reviews",
         components: {
-            review: () => import("../components/review")
+            review: () => import("../components/review-item"),
+            reviewsManipulate: () => import("../components/reviewsManipulate")
         },
         computed: {
             ...mapState('reviews', {
@@ -50,42 +40,20 @@
             })
         },
         methods: {
-            ...mapActions('reviews', ['addReview', 'fetchReviews']),
+            ...mapActions('reviews', ['fetchReviews']),
             ...mapActions("tooltips", ["showTooltip"]),
-            uploadFile(event) {
-                const file = event.target.files[0];
-                this.newReview.photo = file;
-                this.getPhoto(file);
+
+            addReview(){
+                this.mode = 'new';
             },
-            getPhoto(file) {
-                const reader = new FileReader();
-                try {
-                    reader.readAsDataURL(file);
-                } catch (error) {
-                    this.showTooltip({
-                        type: "error",
-                        text: error
-                    });
-                }
+            closeAddForm(){
+                this.mode = '';
             },
-            async addNewReview() {
-                try {
-                    await this.addReview(this.newReview);
-                    this.newReview = {};
-                    this.showTooltip({
-                        type: "success",
-                        text: "Отзыв успешно добавлен"
-                    });
-                } catch(error) {
-                    this.showTooltip({
-                        type: "error",
-                        text: error
-                    });
-                } finally {
-                    this.addNewReviewOn = false;
-                }
+            changemode(mode) {
+                this.mode = mode;
             }
-        },async created() {
+        },
+        async created() {
             try {
                 await this.fetchReviews(store.getters["user/userId"]);
             } catch(error) {
@@ -103,7 +71,8 @@
                     author: "",
                     occ: "",
                     text: ""
-                }
+                },
+                mode: ""
             }
         }
     }
@@ -129,10 +98,64 @@
         &__item {
             background: $white;
             box-shadow: $admin-page-shadow;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-rows: max-content 1fr max-content;
+            row-gap: 30px;
         }
 
-        &__author-ava {
-            width: 70px;
+        &__author {
+            border-bottom:1px solid $admin-skills-border-color;
+            display: grid;
+            grid-template-columns: 70px auto;
+            min-height: 70px;
+            padding-bottom: 30px;
+            column-gap: 20px;
+
+            &-ava {
+                width: 70px;
+                min-height: 70px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center center;
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+            &-info {
+                align-self: center;
+
+                h4 {
+                    font-size: $font-size-name;
+                    font-weight: bold;
+                    color: $text-color;
+                }
+
+                p {
+                    opacity: .5;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__btns {
+            margin-top: 56px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .admin__btn.blue,
+            .admin__btn.decline {
+                width: auto;
+                height: 100%;
+                justify-self: left;
+                background-position-x: right;
+                background-position-y: center;
+                padding-right: 18px;
+            }
+
+            .admin__btn.decline.decline {
+                justify-self: right;
+            }
         }
     }
 
@@ -140,6 +163,37 @@
         &__btn {
             &.btn-add-review {
                 background-image: $admin-page-btn-gradient;
+                width: 100%;
+                height: 100%;
+                color: $white;
+                opacity: .7;
+                transition: $transition;
+                display: grid;
+                justify-content: center;
+                justify-items: center;
+                font-weight: bold;
+                font-size: $font-size-name;
+                grid-gap: 30px;
+                padding-right: 100px;
+                padding-left: 100px;
+
+                &:before {
+                    content: "+";
+                    border:2px solid $white;
+                    border-radius: 50%;
+                    width: 150px;
+                    height: 150px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 72px;
+                    font-weight: 300;
+                    margin: 0 auto 30px;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }
